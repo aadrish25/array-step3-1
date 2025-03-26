@@ -1,0 +1,25 @@
+#brute-force-approach
+
+for(int i=0;i<d;i++)
+{
+  temp[i]=arr[i];
+}
+
+for(int i=d;i<n;i++)
+{
+  arr[i-d]=arr[i];
+}
+
+int j=0;
+for(int i=n-d;i<n;i++)
+{
+  arr[i]=temp[j];
+  j++;
+}
+
+
+#optimal-approach
+
+reverse(0,0+d);
+reverse(0+d;n);
+reverse(0,n);
