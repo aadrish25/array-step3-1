@@ -1,0 +1,39 @@
+#brute-force-approach
+for(i=0;i<n;i++)
+{
+  if(arr[i]!=0)
+  {
+    temp.push_back(arr[i]);
+  }
+}
+
+for(i=0;i<temp.size();i++)
+{
+  arr[i]=temp[i];
+}
+
+for(i=temp.size();i<n;i++)
+{
+  arr[i]=0;
+}
+
+
+
+#optimal-approach
+for(i=0;i<n;i++)
+{
+  if(arr[i]==0)
+  {
+    j=i;
+    break;
+  }
+}
+
+for(i=j+1;i<n;i++)
+{
+  if(arr[i]!=0)
+  {
+    swap(arr[i],arr[j]);
+    j++;
+  }
+}
