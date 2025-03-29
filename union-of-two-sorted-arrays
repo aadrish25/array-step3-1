@@ -1,0 +1,69 @@
+#brute-force-approach
+set<int> st;
+for(int i=0;i<n1;i++)
+{
+  st.insert(a[i]);
+}
+
+for(int i=0;i<n2;i++)
+{
+  st.insert(b[i]);
+}
+
+int i=0;
+int union[st.size()];
+for(auto it: st)
+{
+  union[i]=it;
+  i++;
+}
+
+#optimal-approach
+n1=a.size();
+n2=b.size();
+int i=0;
+int j=0;
+
+while((i<n1) && (j<n2))
+{
+  if(a[i]<=b[j])
+  {
+    if((union.back()!=a[i]) || (union.size()==0))
+    {
+      union.push_back(a[i]);
+    }
+  i++;
+}
+else
+{
+  if((union.back()!=b[j]) || (union.size()==0))
+  {
+    union.push_back(b[j]);
+  }
+j++;
+}
+}
+
+while(i<n1)
+{
+    if((union.back()!=a[i]) || (union.size()==0))
+    {
+      union.push_back(a[i]);
+    }
+  i++;
+}
+
+while(j<n2)
+{
+    if((union.back()!=b[j]) || (union.size()==0))
+    {
+      union.push_back(b[j]);
+    }
+  b++;
+}
+
+
+
+
+  
+  
