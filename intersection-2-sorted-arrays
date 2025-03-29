@@ -1,0 +1,49 @@
+#brute-force-approach
+int n1=a.size();
+int n2=b.size();
+int vis[n2]={0};
+
+for(int i=0;i<n1;i++)
+{
+  for(int j=0;j<n2;j++)
+  {
+    if((a[i]==b[j]) && (vis[j]==0))
+    {
+      inter.push_back(a[i]);
+      vis[j]=1;
+      break;
+    }
+    if(b[j]>a[i])
+    {
+      break;
+    }
+  }
+}
+
+#optimal-approach
+int n1=a.size();
+int n2=b.size();
+int i=0;
+int j=0;
+
+wwhile((i<n1) && (j<n2))
+{
+  if(a[i]==b[j]))
+  {
+    inter.push_back(a[i]);
+    i++;
+    j++;
+  }
+  else if(a[i]<b[j])
+  {
+    i++;
+  }
+  else
+  {
+    j++;
+  }
+}
+
+
+
+  
