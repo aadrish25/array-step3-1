@@ -1,0 +1,34 @@
+#brute-force-solution
+for(int i=1;i<N;i++)
+{
+  flag=0;
+  for(int j=0;j<N;j++)
+  {
+    if(arr[j]==i)
+    {
+      flag=1;
+      break;
+    }
+  }
+  if(flag==0) return i;
+}
+
+#better-solution
+vector<int> hash;
+for(i=0;i<N;i++)
+{
+  hash[arr[i]] =1;
+}
+for(i=1;i<hash.size();i++)
+{
+  if(hash[i]==0) return i;
+}
+
+#optimal-solution
+sum=N*(N+1)/2;
+int s2=0;
+for(i=0;i<arr.size();i++)
+{
+  s2 = s2+arr[i];
+}
+return (sum-s2);
